@@ -2,8 +2,8 @@
 
 ## 🧭 Proposta
 Refazer o **IBPV Front-end**, originalmente desenvolvido em **Blazor**, utilizando **PHP** por motivos de **performance e estabilidade**
- 
-O objetivo é ter uma aplicação **leve, responsiva, documentada e bem estruturada**, mantendo toda a lógica de negócio existente via **API .NET**.
+
+O objetivo é ter uma aplicação **leve, responsiva, documentada e bem estruturada**, mantendo toda a lógica de negócio existente na **API .NET**.
 
 ---
 
