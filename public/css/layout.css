@@ -1,0 +1,265 @@
+
+header {
+  height: 80px;
+  background: var(--color-primary);
+  color: var(--color-surface);;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  /* position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  z-index: 100; */
+}
+
+#header-div-logo{
+    margin: var(--margin-min);
+    margin-left: 2.7rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#header-logo{
+  width: 30px;
+  height: 40px;
+}
+
+#header-div-profile{
+  margin: var(--margin-min);
+  margin-right: 1.7rem;
+  margin-top: 6px;
+  position: relative;
+}
+
+#profile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#profile-btn svg {
+  width: 32px;
+  height: 32px;
+  color: var(--color-surface);
+  transition: transform 0.2s ease;
+}
+
+#profile-btn:hover svg{
+  transform: scale(1.1);
+}
+
+/*suspended profile menu*/
+#profile-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 150px;
+  overflow: hidden;
+  z-index: var(--z-header);
+}
+
+#profile-menu.hidden {
+  display: none;
+}
+
+#profile-menu a {
+  padding: 10px 16px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+#profile-menu a:hover {
+  background: var(--color-background);
+}
+
+#profile-menu a svg {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+
+nav {
+
+    width: 250px;
+    background-color: var(--color-background);
+    position:fixed;
+    top: 80px;
+    bottom: 0px;
+    left: 0px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    
+    gap: var(--gap-default);
+    padding: var(--padding-default);
+
+    box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+
+    transition: width 0.3s ease, transform 0.3s ease;
+}
+
+
+main {
+    margin-left: 250px; /* desktop */
+    transition: margin-left 0.3s ease;
+    background-color: var(--color-background);
+    height: 100vh;
+}
+
+
+/* collpased navbar*/
+nav.collapsed {
+    width: 80px; 
+    padding: var(--padding-default) 12px;
+}
+
+nav.collapsed .btn-icon .label {
+    display: none; 
+}
+
+/* if nav == collapsed {alter margin left}*/
+nav.collapsed ~ main {
+    margin-left: 80px; 
+}
+
+
+/*collapsed button*/
+#collapse-nav-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#collapse-nav-button-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+
+/* nav menu navigation  button transitions */
+nav .btn-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background-color: transparent;
+  color: var(--color-text);
+  border-radius: 8px;
+  width: 100%;
+  justify-content: flex-start;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+nav .btn-icon.active {
+  background: linear-gradient(180deg, var(--color-secondary), var(--color-secondary));
+  box-shadow: 0 6px 18px rgba(65,62,58,0.25);
+  color: var(--color-primary);
+  transition: background 0.3s ease;
+}
+
+
+
+
+/* hamburguer button */
+
+#hamburger {
+  display: none; 
+  flex-direction: column;
+  gap: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 1rem;
+}
+
+#hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-surface);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+
+/* hamburguer animation */
+#hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+#hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+
+
+
+/* for mobile */
+@media (max-width: 768px) {
+  #hamburger {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: 100%;
+    background: var(--color-surface);
+    transform: translateX(-100%); /*initial postition - 100%*/
+    z-index: var(--z-sidebar);
+    transition: transform 0.3s ease;
+  }
+
+  /* move content */
+  main{
+      margin-left:0px;
+  }
+
+  /* remove logo */
+  #header-div-logo
+  {
+    display: none;
+  }
+
+  /* remove collapse button*/
+  #collapse-nav-button{ 
+    display: none;
+  }
+
+  nav.open {
+    transform: translateX(0); /*when recive nav.open class*/
+  }
+}

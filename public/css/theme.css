@@ -1,0 +1,45 @@
+:root{
+    /* Colors */
+    --color-primary: #305b92;      
+    --color-secondary: #74a5e44d;     
+    --color-background: #f0f1f3;    
+    --color-surface: #ffffff;       
+    --color-text: #000000;  
+    --color-background-emphasis: #4A4A4A; ;
+    
+
+    /* Font */
+    --font-main: 'Nunito', sans-serif;
+
+    /* Font sizes */
+    --font-h1: 2.5rem;
+    --font-h2: 2rem;
+    --font-h3: 1.5rem;
+    --font-base: 1.1rem;
+
+    /* Spacing */
+    --padding-default: 1rem;
+    --padding-large: 3rem;
+
+    --margin-min: 0.5rem;
+    --margin-default: 2rem;
+
+    --gap-default:1rem;
+
+
+    /*z-index*/
+
+    --z-header: 100;
+    --z-sidebar: 90;
+    --z-modal: 1000;
+    --z-tooltip: 1100;
+}
+
+/* Global typography */
+body {
+    font-family: var(--font-main);
+}
+
+h1 { font-size: var(--font-h1); }
+h2 { font-size: var(--font-h2); }
+h3 { font-size: var(--font-h3); }

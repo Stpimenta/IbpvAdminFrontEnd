@@ -1,0 +1,19 @@
+{
+    "name": "stpimenta/new-ibpv-front-end",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "stpimenta",
+            "email": "stpimenta3@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.0",
+        "slim/psr7": "^1.7",
+        "league/plates": "^3.6"
+    }
+}
