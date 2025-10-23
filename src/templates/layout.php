@@ -28,12 +28,13 @@
             <img src="/img/logo1.png" id="header-logo" alt="Header Logo">
             <h2>GestPV</h2>
         </div>
-
+        
         <button id="hamburger" aria-label="Abrir menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
+    
 
         <div id="header-div-profile">
             <button id="profile-btn" aria-label="Abrir menu de perfil">

@@ -9,9 +9,9 @@ O objetivo é ter uma aplicação **leve, responsiva, documentada e bem estrutur
 
 ## ⚙️ Stack Principal
 - **PHP 8.2**
-- **Slim Framework 4** — roteamento e estrutura MVC
+- **Slim Framework 4** — roteamento 
 - **League/Plates** — engine de templates (layouts, temas e componentes)
-- **Bootstrap 5** *(uso moderado, apenas onde for essencial)*
+- **CSS** — estilização
 - **JavaScript ES6 puro** — interações, modais e comportamento dinâmico
 
 ---
