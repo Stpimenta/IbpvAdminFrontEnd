@@ -32,7 +32,7 @@ header {
 #header-div-profile{
   margin: var(--margin-min);
   margin-right: 1.7rem;
-  margin-top: 6px;
+  margin-top: 15px;
   position: relative;
 }
 
@@ -70,17 +70,25 @@ header {
   min-width: 150px;
   overflow: hidden;
   z-index: var(--z-header);
+
+
+  /*hidden*/
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.2s ease;
 }
 
-#profile-menu.hidden {
-  display: none;
+#profile-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 #profile-menu a {
   padding: 10px 16px;
   color: var(--color-text);
   text-decoration: none;
-  transition: background 0.2s;
   display: flex;
   align-items: center;
 }
@@ -123,7 +131,8 @@ main {
     margin-left: 250px; /* desktop */
     transition: margin-left 0.3s ease;
     background-color: var(--color-background);
-    height: 100vh;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
 }
 
 
@@ -186,9 +195,7 @@ nav .btn-icon.active {
 
 
 
-
 /* hamburguer button */
-
 #hamburger {
   display: none; 
   flex-direction: column;
@@ -198,6 +205,7 @@ nav .btn-icon.active {
   cursor: pointer;
   padding: 8px;
   margin-left: 1rem;
+
 }
 
 #hamburger span {
@@ -206,7 +214,7 @@ nav .btn-icon.active {
   height: 3px;
   background-color: var(--color-surface);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 
@@ -224,8 +232,6 @@ nav .btn-icon.active {
 }
 
 
-
-
 /* for mobile */
 @media (max-width: 768px) {
   #hamburger {
@@ -237,10 +243,9 @@ nav .btn-icon.active {
     top: 80px;
     left: 0;
     height: 100%;
-    background: var(--color-surface);
     transform: translateX(-100%); /*initial postition - 100%*/
     z-index: var(--z-sidebar);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
   }
 
   /* move content */
