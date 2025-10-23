@@ -18,9 +18,14 @@ O objetivo é ter uma aplicação **leve, responsiva, documentada e bem estrutur
 
 ## 🧩 Funcionalidades Principais
 
-- [ ] Tela de login e autenticação  
-- [ ] Navbar com acesso ao perfil do usuário  
-- [ ] Header polido com logotipo  
+- [] Tela de login e autenticação  
+    - [X] Tela de login UI 
+    - [ ] Lógica de controle de sessão, token e estado do user.
+
+- [X] Layout
+    - [X] Navbar  fluida e responsiva para mobile e desktop
+    - [X] Header polido com logotipo  + acesso ao perfil
+
 - [ ] CRUD de membros  
 - [ ] CRUD de gastos  
 - [ ] CRUD de contribuições  
