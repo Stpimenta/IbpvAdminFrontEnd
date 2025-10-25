@@ -28,28 +28,28 @@ O objetivo é ter uma aplicação **leve, responsiva, documentada e bem estrutur
     - [ ] acesso ao perfil  
 
 - [ ] CRUD de membros  
-        [ ] visualizar
-        [ ] adicionar
-        [ ] editar
-        [ ] excluir
+       - [ ] visualizar
+       - [ ] adicionar
+       - [ ] editar
+       - [ ] excluir
 
 - [ ] CRUD de gastos 
-        [ ] visualizar
-        [ ] adicionar
-        [ ] editar
-        [ ] excluir
+       - [ ] visualizar
+       - [ ] adicionar
+       - [ ] editar
+       - [ ] excluir
 
 - [ ] CRUD de contribuições 
-        [ ] visualizar
-        [ ] adicionar
-        [ ] editar
-        [ ] excluir
+       - [ ] visualizar
+       - [ ] adicionar
+       - [ ] editar
+       - [ ] excluir
 
 - [ ] CRUD de caixa  
-        [ ] visualizar
-        [ ] adicionar
-        [ ] editar
-        [ ] excluir
+       - [ ] visualizar
+       - [ ] adicionar
+       - [ ] editar
+       - [ ] excluir
 
 - [ ] bloqueio de período financeiro
 
