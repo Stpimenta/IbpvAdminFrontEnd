@@ -1,7 +1,19 @@
+
 <?php
-use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
+
+use Slim\Factory\AppFactory;
+use DI\Container;
+use App\Services\JWTService;
+
+//create container
+$container = new Container();
+
+
+
+$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
 $app = AppFactory::create();
 
