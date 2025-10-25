@@ -66,6 +66,7 @@ const profileMenu = document.getElementById('profile-menu');
 
 profileBtn.addEventListener('click', () => {
   profileMenu.classList.toggle('show');
+  console.log('show');
 });
 
 
