@@ -102,28 +102,13 @@
     </nav>
 
     <!--dynamic content -->
-    <main id="dynamic-content">
-
+    <main id="dynamic-content" style="min-height: 300px; position: relative;">
     </main>
 
-    <!-- load dynamic content -->
-    <script>
-        async function loadDashboardContent(page) {
-
-            const response = await fetch('/dashboard/content/' + page);
-
-            if (response.status === 302 || response.status === 401 || response.status === 403) {
-                const redirect = response.headers.get('Location') || '/';
-                window.location.href = redirect;
-                return;
-            }
-
-            const html = await response.text();
-            document.getElementById('dynamic-content').innerHTML = html;
-
-        }
-        document.addEventListener('DOMContentLoaded', () => loadDashboardContent('home'));
-    </script>
+    <!-- loading spinner apenas no espaço do dynamic-content -->
+    <div id="loading" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+        <div class="spinner"></div>
+    </div>
 
 
     <script type="module" src="/js/global.js"></script>
