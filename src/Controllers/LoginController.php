@@ -3,9 +3,9 @@
 namespace App\Controllers;
 
 use App\Services\JWTService;
+use App\Services\LogService;
 
 
-use Exception;
 use App\Models\User;
 use App\Models\Role;
 
@@ -13,16 +13,24 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use DI\Container;
 
 
 class LoginController
 {
+    private LogService $logger;
+
+    public function __construct(LogService $logger)
+    {
+        $this->logger = $logger; 
+    }
+
+    
     // index login screen
     public function index($request, $response)
     {
 
         //verify session
-        session_start();
         $token = $_SESSION['jwtToken'] ?? null;
         
         /** @var User $user */
@@ -43,7 +51,7 @@ class LoginController
     //post login, to save jwt and user
     public function login($request, $response)
     {
-        session_start();
+     
 
         $body = (string) $request->getBody();
         $data = json_decode($body, true);
@@ -119,12 +127,14 @@ class LoginController
             }
 
             //unexpected error
+            $this->logger->error("Unexpected ClientException: " . $e->getMessage());
             $payload = ['success' => false, 'message' => 'Erro inesperado'];
             $response->getBody()->write(json_encode($payload));
             return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
         } catch (\Exception $e) {
 
             //server error
+            $this->logger->error("Exception connecting to API: " . $e->getMessage());
             $payload = ['success' => false, 'message' => 'Erro ao conectar na API'];
             $response->getBody()->write(json_encode($payload));
             return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
@@ -134,7 +144,6 @@ class LoginController
     //logout
     public function logout(Request $request, Response $response): Response
     {
-        session_start();
 
         
         $_SESSION = [];
