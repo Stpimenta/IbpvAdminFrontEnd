@@ -23,7 +23,6 @@ class DashboardController
     {
 
         //verify token
-        session_start();
         $token = $_SESSION['jwtToken'] ?? null;
 
         if (!$token || !JWTService::isValid($token)) {

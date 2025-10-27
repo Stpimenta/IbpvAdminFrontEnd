@@ -28,7 +28,7 @@ class User
     public ?string $estadoCivil;
     public ?bool $active;
     public Role $role;
-    public string $genero; // agora string: "masculino" ou "feminino"
+    public string $genero; 
     public ?string $urlImage;
 
     public function __construct(
