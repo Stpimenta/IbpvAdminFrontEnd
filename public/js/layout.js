@@ -1,6 +1,10 @@
+
+import { pageInit } from './expenses.js';
 /* load page */
+document.addEventListener('DOMContentLoaded', () => loadDashboardContent('expenses'));
+
 /* load dynamic content */
-async function loadDashboardContent(page) {
+export async function loadDashboardContent(page) {
   const content = document.getElementById('dynamic-content');
   const loading = document.getElementById('loading');
 
@@ -30,6 +34,10 @@ async function loadDashboardContent(page) {
     const html = await response.text();
     content.innerHTML = html;
 
+
+    //load page dependences
+    if (pageInits[page]) pageInits[page](content);
+
   } catch (err) {
     content.innerHTML = '<p>Error loading content.</p>';
     console.error(err);
@@ -40,8 +48,46 @@ async function loadDashboardContent(page) {
     }
   }
 }
-document.addEventListener('DOMContentLoaded', () => loadDashboardContent('home'));
 
+window.loadDashboardContent = loadDashboardContent;
+
+//page inits
+
+const pageInits = {
+  expenses(container) {
+    // Flatpickr
+    if (typeof flatpickr !== "undefined") {
+      container.querySelectorAll(".date-input").forEach(input => {
+        if (!input._flatpickr)
+          flatpickr(input, {
+            allowInput: true,
+            dateFormat: "d/m/Y",
+            disableMobile: true,
+            onClose: (selectedDates, dateStr, instance) => {
+              if (input.value !== dateStr) instance.setDate(input.value, false);
+            }
+          });
+
+        // Auto insert /
+        input.addEventListener('input', e => {
+          let value = e.target.value.replace(/\D/g, '');
+          if (value.length > 2 && value.length <= 4)
+            value = value.slice(0,2) + '/' + value.slice(2);
+          else if (value.length > 4)
+            value = value.slice(0,2) + '/' + value.slice(2,4) + '/' + value.slice(4,8);
+          e.target.value = value;
+        });
+      });
+
+      //load cards
+      pageInit();
+    }
+  },
+
+  home(container) {
+    console.log("Home page initialized!");
+  },
+};
 
 //open and close nav bar with hamburguer
 const hamburger = document.getElementById('hamburger');
@@ -122,6 +168,8 @@ document.addEventListener('click', (e) => {
     profileMenu.classList.remove('show');
   }
 });
+
+
 
 
 

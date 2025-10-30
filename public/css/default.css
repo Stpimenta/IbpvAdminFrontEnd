@@ -140,3 +140,8 @@
       color: var(--color-text);
   }
 }
+
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

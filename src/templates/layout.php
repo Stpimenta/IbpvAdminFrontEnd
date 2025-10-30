@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/css/default.css">
     <link rel="stylesheet" href="/css/theme.css">
     <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/dynamicContent.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 </head>
 
@@ -80,7 +82,7 @@
             <span class="label">Contribuições</span>
         </button>
 
-        <button class="btn-icon" aria-label="Usuarios" onclick="loadDashboardContent('usuarios')">
+        <button class="btn-icon" aria-label="Usuarios" onclick="loadDashboardContent('expenses')">
             <span class="icon" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-diamond-minus-icon lucide-diamond-minus">
                     <path d="M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z" />
@@ -102,7 +104,7 @@
     </nav>
 
     <!--dynamic content -->
-    <main id="dynamic-content" style="min-height: 300px; position: relative;">
+    <main id="dynamic-content">
     </main>
 
     <!-- loading spinner apenas no espaço do dynamic-content -->
@@ -111,8 +113,14 @@
     </div>
 
 
+    <!--lib -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!--my js -->
     <script type="module" src="/js/global.js"></script>
-    <script src="/js/layout.js"></script>
+    <script src="/js/dynamicContent.js"></script>
+    <script type="module" src="/js/layout.js"></script>
+    <script type="module" src="/js/expenses.js" defer></script>
 </body>
 
 </html>

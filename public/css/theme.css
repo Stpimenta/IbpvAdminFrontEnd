@@ -31,6 +31,7 @@
 
     --z-header: 100;
     --z-sidebar: 90;
+    --z-filter-toggle: 90;
     --z-modal: 1000;
     --z-tooltip: 1100;
 }

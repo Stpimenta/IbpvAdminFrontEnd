@@ -25,7 +25,7 @@ O objetivo é ter uma aplicação **leve, responsiva, documentada e bem estrutur
 - [X] Layout
     - [X] Navbar  fluida e responsiva para mobile e desktop
     - [X] Header polido com logotipo
-    - [ ] acesso ao perfil  
+    - [x] acesso ao perfil  
 
 - [ ] CRUD de membros  
        - [ ] visualizar
