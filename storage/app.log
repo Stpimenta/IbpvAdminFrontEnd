@@ -4,3 +4,5 @@
 [27/10/2025 13:19:20][ERROR] Exception connecting to API: Server error: `POST http://localhost:5387/api/Login` resulted in a `500 Internal Server Error` response:
 {"type":"https://tools.ietf.org/html/rfc9110#section-15.6.1","title":"An exception has been raised that is likely due to (truncated...)
 
+[28/10/2025 09:48:56][ERROR] Exception connecting to API: Connection refused for URI http://localhost:5387/api/Login
+[30/10/2025 13:44:15][ERROR] Exception connecting to API: Connection refused for URI http://localhost:5387/api/Login

@@ -5,6 +5,7 @@ use App\Controllers\LoginController;
 use App\Controllers\DashboardController;
 use App\Controllers\ErrorController;
 use App\Controllers\ProfileController;
+use App\Controllers\ProxyController;
 
 use App\Middleware\AuthMiddleware;
 
@@ -23,6 +24,10 @@ return function($app) {
 
     /*profile*/
     $app->get('/profile', [ProfileController::class,'profile'])
+        ->add(new AuthMiddleware());
+
+    /*backend proxy*/
+    $app->any('/proxy[/{path:.*}]', [ProxyController::class,'handle'])
         ->add(new AuthMiddleware());
 
     /*error screens*/

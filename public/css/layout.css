@@ -121,7 +121,7 @@ nav {
     gap: var(--gap-default);
     padding: var(--padding-default);
 
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.048);
+    box-shadow: 2px 0 2px rgba(59, 59, 59, 0.055);
 
     transition: width 0.3s ease, transform 0.3s ease;
 
@@ -276,6 +276,7 @@ nav .btn-icon.active {
 #dynamic-content {
   position: relative;
   min-height: 300px;
+  overflow: hidden;
 }
 
 /* blur background */

@@ -48,7 +48,7 @@ class DashboardController
 
     public function content(Request $request, Response $response, array $args)
     {
-        session_start();
+        
         $token = $_SESSION['jwtToken'] ?? null;
         
         if (!$token || !JWTService::isValid($token)) {
